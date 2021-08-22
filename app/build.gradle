@@ -4,6 +4,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-parcelize'
 
@@ -12,7 +13,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "br.com.douglasmotta.whitelabeltutorial"
+        applicationId "br.com.gustavorocha.whitelabeltutorial"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1

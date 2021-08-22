@@ -1,0 +1,126 @@
+{
+  "project_info": {
+    "project_number": "735371796673",
+    "project_id": "white-label-tutorial-bd87d",
+    "storage_bucket": "white-label-tutorial-bd87d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735371796673:android:b8bb61f814cb4c8f61b440",
+        "android_client_info": {
+          "package_name": "br.com.gustavorocha.whitelabeltutorial.bike"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCam8lenfOi9nvnQiYhxSpY59Cl-pXZxp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735371796673:android:b6f4d2478521614061b440",
+        "android_client_info": {
+          "package_name": "br.com.gustavorocha.whitelabeltutorial.bike.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCam8lenfOi9nvnQiYhxSpY59Cl-pXZxp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735371796673:android:07d2d0fde04d301e61b440",
+        "android_client_info": {
+          "package_name": "br.com.gustavorocha.whitelabeltutorial.car"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCam8lenfOi9nvnQiYhxSpY59Cl-pXZxp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735371796673:android:997c141a414eb9cd61b440",
+        "android_client_info": {
+          "package_name": "br.com.gustavorocha.whitelabeltutorial.car.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCam8lenfOi9nvnQiYhxSpY59Cl-pXZxp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "735371796673-ogcv370nhe9k3hdom0pssp1stf71qord.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
