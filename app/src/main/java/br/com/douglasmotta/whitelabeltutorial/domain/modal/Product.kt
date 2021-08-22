@@ -1,8 +1,15 @@
 package br.com.douglasmotta.whitelabeltutorial.domain.modal
 
+import android.os.Parcelable
+import com.google.firebase.firestore.PropertyName
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Product(
     val id: String = "",
     val descriptor: String = "",
     val price: Double = 0.0,
-    val imageUrl: String = ""
-)
+    @get:PropertyName("image_url")
+    @set:PropertyName("image_url")
+    var imageUrl: String = ""
+) : Parcelable
