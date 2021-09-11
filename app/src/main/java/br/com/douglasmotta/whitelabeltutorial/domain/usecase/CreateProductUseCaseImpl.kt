@@ -8,7 +8,7 @@ import java.util.UUID
 class CreateProductUseCaseImpl(private val uploadProductImageUseCase: UploadProductImageUseCase,
                                private val repository: ProductRepository) : CreateProductUseCase {
 
-    override suspend fun invoke(id: String, descriptor: String, price: Double, imageUri: Uri): Product {
+    override suspend fun invoke(descriptor: String, price: Double, imageUri: Uri): Product {
         return try {
             val imageUrl = uploadProductImageUseCase(imageUri)
             val product = Product(UUID.randomUUID().toString(), descriptor, price, imageUrl)
