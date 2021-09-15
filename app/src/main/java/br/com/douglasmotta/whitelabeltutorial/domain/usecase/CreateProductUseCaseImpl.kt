@@ -3,10 +3,12 @@ package br.com.douglasmotta.whitelabeltutorial.domain.usecase
 import android.net.Uri
 import br.com.douglasmotta.whitelabeltutorial.data.ProductRepository
 import br.com.douglasmotta.whitelabeltutorial.domain.modal.Product
-import java.util.UUID
+import java.util.*
+import javax.inject.Inject
 
-class CreateProductUseCaseImpl(private val uploadProductImageUseCase: UploadProductImageUseCase,
-                               private val repository: ProductRepository) : CreateProductUseCase {
+class CreateProductUseCaseImpl @Inject constructor(
+    private val uploadProductImageUseCase: UploadProductImageUseCase,
+    private val repository: ProductRepository) : CreateProductUseCase {
 
     override suspend fun invoke(descriptor: String, price: Double, imageUri: Uri): Product {
         return try {
