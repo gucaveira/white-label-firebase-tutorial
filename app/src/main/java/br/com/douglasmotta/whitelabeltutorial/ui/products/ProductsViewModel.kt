@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import br.com.douglasmotta.whitelabeltutorial.config.Config
 import br.com.douglasmotta.whitelabeltutorial.domain.modal.Product
 import br.com.douglasmotta.whitelabeltutorial.domain.usecase.GetProductsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,11 +13,15 @@ import javax.inject.Inject
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class ProductsViewModel @Inject constructor(private val getProductsUseCase: GetProductsUseCase) :
-    ViewModel() {
+class ProductsViewModel @Inject constructor(private val getProductsUseCase: GetProductsUseCase,
+                                            config: Config) : ViewModel() {
 
     private val _productData = MutableLiveData<List<Product>>()
     val productData: LiveData<List<Product>> = _productData
+
+
+    private val _addButtonVisibilityData = MutableLiveData(config.addButtonVisibility)
+    val addButtonVisibilityData: LiveData<Int> = _addButtonVisibilityData
 
 
     fun getProducts() = viewModelScope.launch {
