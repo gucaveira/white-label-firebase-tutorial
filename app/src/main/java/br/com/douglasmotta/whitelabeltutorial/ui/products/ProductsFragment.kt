@@ -6,7 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.navigation.fragment.findNavController
+import br.com.douglasmotta.whitelabeltutorial.R
 import br.com.douglasmotta.whitelabeltutorial.databinding.FragmentProductsBinding
+import br.com.douglasmotta.whitelabeltutorial.domain.modal.Product
+import br.com.douglasmotta.whitelabeltutorial.util.PRODUCT_KEY
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +34,8 @@ class ProductsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView()
+        setListeners()
+        observeNavBackStack()
         observeVWEvents()
 
         viewModel.getProducts()
@@ -37,6 +45,41 @@ class ProductsFragment : Fragment() {
         binding.recyclerProducts.run {
             setHasFixedSize(true)
             adapter = productAdapter
+        }
+    }
+
+    private fun setListeners() {
+        binding.fabAdd.setOnClickListener {
+            findNavController().navigate(R.id.action_productsFragment_to_addProductFragment)
+        }
+    }
+
+    private fun observeNavBackStack() {
+        findNavController().run {
+            val navBackStackEntry = getBackStackEntry(R.id.productsFragment)
+            val savedStateHandle = navBackStackEntry.savedStateHandle
+
+            val observe = LifecycleEventObserver { _, event ->
+                if (event == Lifecycle.Event.ON_RESUME && savedStateHandle.contains(PRODUCT_KEY)) {
+                    val product = savedStateHandle.get<Product>(PRODUCT_KEY)
+
+                    val oldList = productAdapter.currentList
+                    val newList = oldList.toMutableList().apply {
+                        add(product)
+                    }
+                    productAdapter.submitList(newList)
+                    binding.recyclerProducts.smoothScrollToPosition(newList.size - 1)
+                    savedStateHandle.remove<Product>(PRODUCT_KEY)
+                }
+            }
+
+            navBackStackEntry.lifecycle.addObserver(observe)
+
+            viewLifecycleOwner.lifecycle.addObserver(LifecycleEventObserver { _, event ->
+                if (event == Lifecycle.Event.ON_DESTROY) {
+                    navBackStackEntry.lifecycle.removeObserver(observe)
+                }
+            })
         }
     }
 
